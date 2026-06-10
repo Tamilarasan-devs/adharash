@@ -145,7 +145,7 @@ export default function MatricPalladam() {
 
       {/* ════════════════════════ FLOATING HIGHLIGHT CARDS ═══════════════════════ */}
       <div className="relative z-20 bg-[#FAFAF6]">
-        <div className="max-w-7xl mx-auto px-6 lg:px-12 -mt-14">
+        <div className="max-w-7xl mx-auto px-6 lg:px-12 mt-14">
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {highlights.map((h, i) => (
               <div

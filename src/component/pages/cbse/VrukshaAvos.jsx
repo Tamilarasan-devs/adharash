@@ -18,21 +18,6 @@ import {
 
 import heroImg from "../../../assets/img/about/herimg.webp";
 
-/* ─────────────────────────────────────────────────────────────────
-   tailwind.config.js — add these extensions:
-
-   theme: {
-     extend: {
-       fontFamily: {
-         display: ["Playfair Display", "Georgia", "serif"],
-         sans:    ["Inter", "sans-serif"],
-       },
-     },
-   },
-
-   index.css — add:
-   @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap');
-───────────────────────────────────────────────────────────────── */
 
 const features = [
   {
@@ -86,9 +71,9 @@ const howItWorks = [
 
 const stats = [
   { val: "2,000+", lbl: "Students Enrolled" },
-  { val: "CBSE",   lbl: "Recognised Board"  },
-  { val: "100%",   lbl: "Digital Delivery"  },
-  { val: "K–XII",  lbl: "All Grades"        },
+  { val: "CBSE", lbl: "Recognised Board" },
+  { val: "100%", lbl: "Digital Delivery" },
+  { val: "K–XII", lbl: "All Grades" },
 ];
 
 const curriculum = [
@@ -129,40 +114,63 @@ export default function VrukshaAvos() {
 
       {/* ══════════════════════════════════ HERO ══════════════════════════════════ */}
       <div className="relative min-h-[90vh] flex items-center overflow-hidden">
+        {/* Background Image */}
         <img
-          src={heroImg}
+          src="https://storage.googleapis.com/cdn-edustoke/mysql_images/full/5d8f1f75-ee45-4340-8e21-ac08376f2dc1_c3233605.webp"
           alt="Vruksha AVOS"
-          className="absolute inset-0 w-full h-full object-cover opacity-15"
+          className="absolute inset-0 w-full h-full object-cover object-right opacity-95"
         />
-        <div className="absolute inset-0 bg-gradient-to-br from-[#0D1B2E] via-[#0F2340] to-[#0D1B2E]" />
 
-        {/* decorative rings */}
+        {/* Left → Right Fade Overlay */}
+        <div
+          className="absolute inset-0"
+          style={{
+            background:
+              "linear-gradient(90deg, #0D1B2E 0%, rgba(13,27,46,0.98) 18%, rgba(13,27,46,0.85) 35%, rgba(13,27,46,0.55) 55%, rgba(13,27,46,0.20) 75%, rgba(13,27,46,0) 100%)",
+          }}
+        />
+
+        {/* Decorative Rings */}
         <div className="absolute -top-24 -right-24 w-[560px] h-[560px] rounded-full border border-[#C9A84C]/15 pointer-events-none" />
         <div className="absolute -bottom-36 -left-20 w-[420px] h-[420px] rounded-full border border-[#C9A84C]/10 pointer-events-none" />
-        <div className="absolute top-1/3 right-1/3 w-[280px] h-[280px] rounded-full border border-[#C9A84C]/06 pointer-events-none" />
+        <div className="absolute top-1/3 right-1/3 w-[280px] h-[280px] rounded-full border border-[#C9A84C]/10 pointer-events-none" />
 
+        {/* Content */}
         <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 w-full py-24">
           <div className="max-w-3xl">
-            <div className="inline-flex items-center gap-2 border border-[#C9A84C]/50 rounded-full px-5 py-2 text-[#C9A84C] text-xs tracking-[2.5px] uppercase mb-8">
+            {/* Badge */}
+            <div className="inline-flex items-center gap-2 border border-[#C9A84C]/50 rounded-full px-5 py-2 text-[#C9A84C] text-xs tracking-[2.5px] uppercase mb-8 backdrop-blur-sm">
               <Sparkles size={12} />
               CBSE Online School
             </div>
 
+            {/* Heading */}
             <h1 className="font-display text-[clamp(3rem,6vw,5.2rem)] font-bold text-[#FAFAF6] leading-[1.06] mb-6">
-              Vruksha<br />AVOS
+              Vruksha
+              <br />
+              AVOS
             </h1>
 
-            <p className="text-[rgba(250,250,246,0.65)] text-lg leading-[1.85] max-w-[520px] mb-12">
+            {/* Description */}
+            <p className="text-[rgba(250,250,246,0.72)] text-lg leading-[1.85] max-w-[520px] mb-12">
               Vruksha Adharsh Vidyalaya Online School — redefining education
-              through technology, innovation, and the freedom to learn from anywhere.
+              through technology, innovation, and the freedom to learn from
+              anywhere.
             </p>
 
-            {/* stat row */}
+            {/* Stats */}
             <div className="flex flex-wrap gap-8">
               {stats.map(({ val, lbl }) => (
-                <div key={lbl} className="border-l-[1.5px] border-[#C9A84C] pl-4">
-                  <div className="font-display text-[2rem] font-bold text-[#C9A84C] leading-none">{val}</div>
-                  <div className="text-[11px] tracking-[2px] uppercase text-[rgba(250,250,246,0.45)] mt-1">{lbl}</div>
+                <div
+                  key={lbl}
+                  className="border-l-[1.5px] border-[#C9A84C] pl-4"
+                >
+                  <div className="font-display text-[2rem] font-bold text-[#C9A84C] leading-none">
+                    {val}
+                  </div>
+                  <div className="text-[11px] tracking-[2px] uppercase text-[rgba(250,250,246,0.45)] mt-1">
+                    {lbl}
+                  </div>
                 </div>
               ))}
             </div>
@@ -184,18 +192,25 @@ export default function VrukshaAvos() {
             Learning Redefined
           </h2>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 auto-rows-fr">
             {features.map((item, i) => (
-              <div
-                key={i}
-                className="group bg-white border border-[#E2D9C4] rounded-xl p-7 relative overflow-hidden hover:border-[#C9A84C] hover:shadow-[0_4px_24px_rgba(201,168,76,0.12)] transition-all duration-300"
-              >
-                <div className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-[#C9A84C] to-[#E8C96E] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                <div className="w-10 h-10 rounded-lg bg-[#F4F1E8] text-[#B8952A] flex items-center justify-center mb-5">
-                  {item.icon}
+              <div key={i} className="relative rounded-xl p-[2px] overflow-hidden animated-border h-full">
+
+                <div className="relative bg-white border border-[#E2D9C4] rounded-xl p-7 z-10 h-full flex flex-col">
+
+                  <div className="w-10 h-10 rounded-lg bg-[#F4F1E8] text-[#B8952A] flex items-center justify-center mb-5">
+                    {item.icon}
+                  </div>
+
+                  <h3 className="font-display text-lg font-bold text-[#0D1B2E] mb-2">
+                    {item.title}
+                  </h3>
+
+                  <p className="text-[#5A6A7A] text-md leading-relaxed flex-1">
+                    {item.desc}
+                  </p>
+
                 </div>
-                <h3 className="font-display text-lg font-bold text-[#0D1B2E] mb-2">{item.title}</h3>
-                <p className="text-[#5A6A7A] text-sm leading-relaxed">{item.desc}</p>
               </div>
             ))}
           </div>
@@ -270,18 +285,98 @@ export default function VrukshaAvos() {
             How It Works
           </h2>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {howItWorks.map((item, i) => (
-              <div key={i} className="bg-white border border-[#E2D9C4] rounded-xl p-7 relative overflow-hidden">
-                <div className="h-0.5 bg-gradient-to-r from-[#C9A84C] to-[#E8C96E] absolute top-0 left-0 right-0" />
-                <div className="font-display text-[3rem] font-bold text-[#F4F1E8] leading-none mb-4 select-none">
-                  {item.step}
+              <div
+                key={i}
+                className="
+        group
+        relative
+        overflow-hidden
+        rounded-3xl
+        border border-white/10
+        bg-white/80
+        backdrop-blur-xl
+        p-8
+        shadow-[0_10px_40px_rgba(0,0,0,0.06)]
+        hover:-translate-y-2
+        hover:shadow-[0_20px_60px_rgba(0,0,0,0.12)]
+        transition-all
+        duration-500
+      "
+              >
+                {/* Gradient Glow */}
+                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-500">
+                  <div className="absolute -top-20 -right-20 w-40 h-40 bg-[#C9A84C]/20 blur-3xl rounded-full" />
                 </div>
-                <div className="w-9 h-9 rounded-lg bg-[#F4F1E8] text-[#B8952A] flex items-center justify-center mb-4">
+
+
+
+                {/* Icon */}
+                <div
+                  className="
+          relative z-10
+          w-14 h-14
+          rounded-2xl
+          bg-gradient-to-br
+          from-[#C9A84C]
+          to-[#E8C96E]
+          text-white
+          flex
+          items-center
+          justify-center
+          shadow-lg
+          mb-6
+          group-hover:scale-110
+          transition-transform
+          duration-500
+        "
+                >
                   {item.icon}
                 </div>
-                <h3 className="font-display text-base font-bold text-[#0D1B2E] mb-2">{item.title}</h3>
-                <p className="text-[#5A6A7A] text-sm leading-relaxed">{item.desc}</p>
+
+                {/* Title */}
+                <h3
+                  className="
+          relative z-10
+          font-display
+          text-xl
+          font-semibold
+          text-[#0D1B2E]
+          mb-3
+        "
+                >
+                  {item.title}
+                </h3>
+
+                {/* Description */}
+                <p
+                  className="
+          relative z-10
+          text-[#64748B]
+          text-md
+          leading-7
+        "
+                >
+                  {item.desc}
+                </p>
+
+                {/* Bottom Accent */}
+                <div
+                  className="
+          absolute
+          bottom-0
+          left-0
+          h-1
+          w-0
+          bg-gradient-to-r
+          from-[#C9A84C]
+          to-[#E8C96E]
+          group-hover:w-full
+          transition-all
+          duration-500
+        "
+                />
               </div>
             ))}
           </div>
@@ -302,21 +397,96 @@ export default function VrukshaAvos() {
             Academic Structure
           </h2>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {curriculum.map((c, i) => (
-              <div key={i} className="bg-white border border-[#E2D9C4] rounded-xl overflow-hidden">
-                <div className="h-0.5 bg-gradient-to-r from-[#C9A84C] to-[#E8C96E]" />
-                <div className="p-6">
-                  <h3 className="font-display text-base font-bold text-[#0D1B2E] leading-snug">{c.grade}</h3>
-                  <p className="text-[11px] tracking-[2px] uppercase text-[#B8952A] font-semibold mt-1 mb-5">{c.tag}</p>
-                  <ul className="space-y-2.5">
-                    {c.subjects.map((s, j) => (
-                      <li key={j} className={`flex items-center gap-2.5 text-sm text-[#5A6A7A] pb-2.5 ${j < c.subjects.length - 1 ? "border-b border-[#F0EBE0]" : ""}`}>
-                        <span className="w-1.5 h-1.5 rounded-full bg-[#C9A84C] shrink-0" />
-                        {s}
-                      </li>
-                    ))}
-                  </ul>
+              <div
+                key={i}
+                className="
+        group
+        relative
+        overflow-hidden
+        rounded-3xl
+        border border-[#E7DFC9]
+        bg-white
+        p-7
+        shadow-[0_10px_40px_rgba(0,0,0,0.05)]
+        hover:-translate-y-2
+        hover:shadow-[0_20px_60px_rgba(0,0,0,0.12)]
+        transition-all
+        duration-500
+      "
+              >
+                {/* Hover Glow */}
+                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-500">
+                  <div className="absolute -top-20 -right-20 w-44 h-44 rounded-full bg-[#C9A84C]/20 blur-3xl" />
+                </div>
+
+                {/* Grade Watermark */}
+                {/* <div className="absolute top-3 right-5 text-[5rem] font-black text-[#C9A84C]/10 leading-none select-none">
+                  {String(i + 1).padStart(2, "0")}
+                </div> */}
+
+                {/* Top Accent */}
+                <div className="absolute top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-[#C9A84C] via-[#E8C96E] to-[#C9A84C]" />
+
+                {/* Curriculum Title */}
+                <div className="relative z-10">
+                  <h3 className="font-display text-xl font-bold text-[#0D1B2E] leading-tight">
+                    {c.grade}
+                  </h3>
+
+                  <div className="inline-flex mt-3 items-center rounded-full bg-[#C9A84C]/10 border border-[#C9A84C]/20 px-3 py-1">
+                    <span className="text-[11px] font-semibold tracking-[2px] uppercase text-[#B8952A]">
+                      {c.tag}
+                    </span>
+                  </div>
+                </div>
+
+                {/* Divider */}
+                <div className="relative z-10 my-6 h-px bg-gradient-to-r from-transparent via-[#E6DCC3] to-transparent" />
+
+                {/* Subjects */}
+                <div className="relative z-10 flex flex-wrap gap-2">
+                  {c.subjects.map((subject, j) => (
+                    <span
+                      key={j}
+                      className="
+              px-3
+              py-2
+              rounded-xl
+              bg-[#F8F6F0]
+              border
+              border-[#ECE4D1]
+              text-[#425466]
+              text-sm
+              font-medium
+              transition-all
+              duration-300
+              group-hover:bg-white
+              group-hover:border-[#D9C48B]
+            "
+                    >
+                      {subject}
+                    </span>
+                  ))}
+                </div>
+
+                {/* Bottom CTA */}
+                <div className="relative z-10 mt-7 flex items-center gap-2 text-[#B8952A] text-sm font-semibold">
+                  Explore Curriculum
+                  <svg
+                    className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M9 5l7 7-7 7"
+                    />
+                  </svg>
                 </div>
               </div>
             ))}
@@ -332,10 +502,10 @@ export default function VrukshaAvos() {
         <div className="max-w-7xl mx-auto">
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
             {[
-              { icon: <Clock size={20} />,         label: "Flexible Timings",      sub: "Learn on your schedule"         },
-              { icon: <HeartHandshake size={20} />, label: "Dedicated Mentors",     sub: "Personal academic support"      },
-              { icon: <BookOpen size={20} />,       label: "Rich Study Material",   sub: "Notes, videos & practice tests" },
-              { icon: <Award size={20} />,          label: "CBSE Certified",        sub: "Board-recognised programme"     },
+              { icon: <Clock size={20} />, label: "Flexible Timings", sub: "Learn on your schedule" },
+              { icon: <HeartHandshake size={20} />, label: "Dedicated Mentors", sub: "Personal academic support" },
+              { icon: <BookOpen size={20} />, label: "Rich Study Material", sub: "Notes, videos & practice tests" },
+              { icon: <Award size={20} />, label: "CBSE Certified", sub: "Board-recognised programme" },
             ].map((h, i) => (
               <div key={i} className="flex items-start gap-4 bg-white border border-[#E2D9C4] rounded-xl p-5">
                 <div className="w-9 h-9 rounded-lg bg-[#F4F1E8] text-[#B8952A] flex items-center justify-center shrink-0">
@@ -391,6 +561,45 @@ export default function VrukshaAvos() {
           </p>
         </div>
       </div>
+
+      <style>{`
+        .animated-border {
+          position: relative;
+        }
+
+        .animated-border::before {
+          content: "";
+          position: absolute;
+          inset: 0;
+          padding: 2px;
+          border-radius: 12px;
+     background: linear-gradient(
+  90deg,
+  #1e3a8a,
+  transparent,
+  #3b82f6,
+  transparent,
+  #1e3a8a
+);
+          background-size: 300% 300%;
+          animation: borderMove 10s linear infinite;
+          -webkit-mask: 
+            linear-gradient(#000 0 0) content-box,
+            linear-gradient(#000 0 0);
+          -webkit-mask-composite: xor;
+          mask-composite: exclude;
+          pointer-events: none;
+        }
+
+        @keyframes borderMove {
+          0% {
+            background-position: 0% 50%;
+          }
+          100% {
+            background-position: 300% 50%;
+          }
+        }
+      `}</style>
 
     </section>
   );

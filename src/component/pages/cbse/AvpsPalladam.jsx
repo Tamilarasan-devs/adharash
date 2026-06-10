@@ -40,53 +40,75 @@ export default function AvpsPalladam() {
 
       {/* ══════════════════════════════════ HERO ══════════════════════════════════ */}
       <div className="relative min-h-[88vh] flex items-center overflow-hidden">
-        <img
-          src={img1}
-          alt="AVPS Palladam campus"
-          className="absolute inset-0 w-full h-full object-cover opacity-15"
-        />
+  {/* Background Image */}
+  <img
+    src={img1}
+    alt="AVPS Palladam campus"
+    className="absolute inset-0 w-full h-full object-cover object-right opacity-100"
+  />
 
-        {/* deep navy gradient */}
-        <div className="absolute inset-0 bg-gradient-to-br from-[#0D1B2E] via-[#142338] to-[#0D1B2E]" />
+  {/* Left → Right Gradient Overlay */}
+  <div
+    className="absolute inset-0"
+    style={{
+      background:
+        "linear-gradient(90deg, #0D1B2E 0%, rgba(13,27,46,0.98) 18%, rgba(13,27,46,0.92) 35%, rgba(13,27,46,0.75) 50%, rgba(13,27,46,0.35) 70%, rgba(13,27,46,0) 100%)",
+    }}
+  />
 
-        {/* decorative gold rings */}
-        <div className="absolute -top-20 -right-20 w-[520px] h-[520px] rounded-full border border-[#C9A84C]/15 pointer-events-none" />
-        <div className="absolute -bottom-32 -left-16 w-[380px] h-[380px] rounded-full border border-[#C9A84C]/10 pointer-events-none" />
-        <div className="absolute top-1/2 right-1/4 w-[240px] h-[240px] rounded-full border border-[#C9A84C]/08 pointer-events-none" />
+  {/* Decorative Gold Rings */}
+  <div className="absolute -top-20 -right-20 w-[520px] h-[520px] rounded-full border border-[#C9A84C]/15 pointer-events-none" />
+  <div className="absolute -bottom-32 -left-16 w-[380px] h-[380px] rounded-full border border-[#C9A84C]/10 pointer-events-none" />
+  <div className="absolute top-1/2 right-1/4 w-[240px] h-[240px] rounded-full border border-[#C9A84C]/10 pointer-events-none" />
 
-        <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 w-full">
-          <div className="max-w-2xl">
-            {/* badge */}
-            <div className="inline-flex items-center gap-2 border border-[#C9A84C]/50 rounded-full px-5 py-2 text-[#C9A84C] text-xs tracking-[2.5px] uppercase mb-8">
-              <GraduationCap size={13} />
-              CBSE School · Palladam
+  {/* Optional Gold Glow */}
+  <div className="absolute right-0 top-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-[#C9A84C]/10 blur-[140px] rounded-full pointer-events-none" />
+
+  {/* Content */}
+  <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 w-full">
+    <div className="max-w-2xl">
+      {/* Badge */}
+      <div className="inline-flex items-center gap-2 border border-[#C9A84C]/50 rounded-full px-5 py-2 text-[#C9A84C] text-xs tracking-[2.5px] uppercase mb-8 backdrop-blur-sm">
+        <GraduationCap size={13} />
+        CBSE School · Palladam
+      </div>
+
+      {/* Heading */}
+      <h1 className="font-display text-[clamp(3rem,6vw,5.2rem)] font-bold text-[#FAFAF6] leading-[1.06] mb-6">
+        Adharsh
+        <br />
+        Vidhyalaya
+      </h1>
+
+      {/* Description */}
+      <p className="text-[rgba(250,250,246,0.72)] text-lg leading-[1.85] max-w-[520px] mb-12">
+        A legacy of excellence in education — shaping young minds
+        with knowledge, discipline, and enduring values.
+      </p>
+
+      {/* Stats */}
+      <div className="flex flex-wrap gap-8">
+        {[
+          ["CBSE", "Curriculum"],
+          ["K–X", "All Grades"],
+          ["2010", "Established"],
+        ].map(([val, lbl]) => (
+          <div
+            key={lbl}
+            className="border-l-[1.5px] border-[#C9A84C] pl-4"
+          >
+            <div className="font-display text-[2rem] font-bold text-[#C9A84C] leading-none">
+              {val}
             </div>
-
-            <h1 className="font-display text-[clamp(3rem,6vw,5.2rem)] font-bold text-[#FAFAF6] leading-[1.06] mb-6">
-              Adharsh<br />Vidhyalaya
-            </h1>
-
-            <p className="text-[rgba(250,250,246,0.65)] text-lg leading-[1.85] max-w-[480px] mb-10">
-              A legacy of excellence in education — shaping young minds
-              with knowledge, discipline, and enduring values.
-            </p>
-
-            {/* stat row */}
-            <div className="flex gap-8">
-              {[
-                ["CBSE",  "Curriculum"],
-                ["K–X",   "All Grades"],
-                ["2010",  "Established"],
-              ].map(([val, lbl]) => (
-                <div key={lbl} className="border-l-[1.5px] border-[#C9A84C] pl-4">
-                  <div className="font-display text-[2rem] font-bold text-[#C9A84C] leading-none">{val}</div>
-                  <div className="text-[11px] tracking-[2px] uppercase text-[rgba(250,250,246,0.45)] mt-1">{lbl}</div>
-                </div>
-              ))}
+            <div className="text-[11px] tracking-[2px] uppercase text-[rgba(250,250,246,0.45)] mt-1">
+              {lbl}
             </div>
           </div>
-        </div>
+        ))}
       </div>
+    </div>
+  </div>
+</div>
 
       {/* gold hairline */}
       <div className="w-full h-px bg-gradient-to-r from-transparent via-[#E2D9C4] to-transparent" />

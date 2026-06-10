@@ -115,7 +115,7 @@ export default function ArtsCollege() {
 
             {/* ═══════════════════════ FLOATING HIGHLIGHT CARDS ════════════════════════ */}
             <div className="relative z-20 bg-[#FAFAF6]">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 -mt-10 sm:-mt-14">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 mt-10 sm:mt-14">
                     <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
                         {highlights.map((h, i) => (
                             <div

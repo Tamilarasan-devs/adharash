@@ -46,7 +46,7 @@ export default function Header() {
         },
         {
             label: "CBSE",
-            path: "/cbse",
+            path: "/cbse/avps-anthiyur",
             dropdown: [
                 { label: "AVPS Anthiyur", path: "/cbse/avps-anthiyur" },
                 { label: "AVPS Palladam", path: "/cbse/avps-palladam" },
@@ -55,7 +55,7 @@ export default function Header() {
         },
         {
             label: "Matriculation",
-            path: "/matriculation",
+            path: "/matriculation/palladam",
             dropdown: [
                 { label: "Adharsh Vidhyalaya Hr Sec School, Palladam", path: "/matriculation/palladam" },
                 { label: "Adharsh Vidhyalaya Hr Sec School, Anthiyur", path: "/matriculation/anthiyur" },
