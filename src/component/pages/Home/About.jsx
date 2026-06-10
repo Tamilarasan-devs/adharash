@@ -212,7 +212,7 @@ export default function About() {
               ))}
             </div>
 
-            <button className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white text-sm font-semibold px-7 py-3.5 rounded-xl shadow-lg shadow-blue-500/30 hover:shadow-blue-500/50 hover:-translate-y-0.5 transition-all duration-200">
+            <button className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white text-sm font-semibold px-7 py-3.5 rounded-xl shadow-lg shadow-blue-500/30 hover:shadow-blue-500/50 hover:-translate-y-0.5 transition-all duration-200" onClick={()=>navigation('/about')} >
               Learn More <ChevronRight size={16} />
             </button>
           </div>
@@ -302,7 +302,7 @@ export default function About() {
                     {item.desc}
                   </p>
 
-                  <button className="inline-flex items-center gap-2 bg-white text-slate-900 text-sm font-semibold px-5 sm:px-6 py-3 rounded-full hover:bg-slate-100 transition-colors duration-200 shadow-lg">
+                  <button className="inline-flex items-center gap-2 bg-white text-slate-900 text-sm font-semibold px-5 sm:px-6 py-3 rounded-full hover:bg-slate-100 transition-colors duration-200 shadow-lg" onClick={()=>navigation('/about')}>
                     Discover More
                     <ChevronRight size={16} />
                   </button>

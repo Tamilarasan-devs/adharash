@@ -11,9 +11,12 @@ import bnr1 from "../../../assets/img/banner/bnr1.avif";
 import bnr2 from "../../../assets/img/banner/bnr2.avif";
 import bnr3 from "../../../assets/img/banner/bnr3.avif";
 import bnr4 from "../../../assets/img/banner/bnr4.avif";
+import { useNavigate, useNavigation } from "react-router-dom";
 
 export default function Banner() {
     const banners = [bnr1, bnr2, bnr3, bnr4];
+
+    const navigation =useNavigate()
 
     return (
         <section className="relative w-full overflow-hidden">
@@ -104,6 +107,7 @@ export default function Banner() {
                                                 hover:scale-105
                                                 shadow-xl
                                             "
+                                            onClick={()=>navigation("/about")}
                                         >
                                             Explore More
                                         </button>

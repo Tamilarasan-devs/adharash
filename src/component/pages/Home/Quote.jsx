@@ -157,7 +157,7 @@ export default function QuoteSection() {
         </div>
 
         {/* Bottom Statement */}
-        <div className="mt-32">
+        <div className="mt-14 mb-10">
 
           <div className="max-w-5xl mx-auto text-center">
 
